@@ -1,0 +1,124 @@
+#content {
+  // background-color: lightcoral;
+  margin: 0 auto;
+  height: 200px;
+  width: 1000px;
+  margin-top: 100px;
+  //display: flex;
+
+  .form {
+    margin: 0 auto;
+    border: solid;
+    border-radius: 20px;
+    border-color: #78a2cc;
+    text-align: center;
+    background-color: lightblue;
+    justify-content: center;
+    width: 600px;
+    height: 200px;
+    color: white;
+    h1 {
+      font-size: 30px;
+      font-weight: 300;
+    }
+    #cityZip {
+      height: 30px;
+      width: 300px;
+      border: solid;
+      border-radius: 5px;
+      border-color: #78a2cc;
+      border-width: 2px;
+    }
+    #submit {
+      width: 100px;
+      font-weight: 600;
+      font-size: 14px;
+      height: 30px;
+      color: white;
+      background-color: lightblue;
+      border: solid;
+      border-radius: 5px;
+      border-color: #78a2cc;
+      border-width: 2px;
+      transition: 0.3s ease-in-out;
+    }
+    #submit:hover {
+      color: #fdfd96;
+      border-color: #fdfd96;
+    }
+    input::placeholder {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      color: white;
+    }
+    input[type="text"] {
+      background-color: #bfd4db;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 20px;
+      color: white;
+    }
+    input::selection {
+      border-color: #78a2cc;
+    }
+    input:autofill {
+      color: white;
+    }
+  }
+  #WeatherContainer {
+    padding-top: 50px;
+    margin: 0 auto;
+    //background-color: black;
+    width: 1000px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .day {
+      margin-bottom: 50px;
+      width: 400px;
+      background-color: lightblue;
+      text-align: center;
+      border-radius: 20px;
+      border: solid;
+      border-color: #78a2cc;
+      h3 {
+        font-weight: 300;
+        font-size: 25px;
+      }
+      h2 {
+        font-weight: 300;
+        font-size: 15px;
+      }
+      h4 {
+        font-weight: 300;
+        font-size: 20px;
+      }
+      h5 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      span {
+        font-weight: 100;
+        color: #fdfd96;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  #content {
+    width: 650px;
+
+    #WeatherContainer {
+      width: 650px;
+      flex-direction: column;
+
+      .day {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
