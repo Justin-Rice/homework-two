@@ -1,16 +1,16 @@
 
-function getWeather(cityZip){
+function getWeather(cityZip) {
     $("#content #WeatherContainer").html(``);
 
     //each day of the week 
     // $.get(`http://api.weatherapi.com/v1/current.json?key=6d9495112b8448b4a22202948211309&q=${cityZip}&aqi=no
-    $.get(`http://api.weatherapi.com/v1/forecast.json?key=2d6c3cdfeee14008b4e153345211509&q=${cityZip}&days=8&aqi=no&alerts=no
-    `, function(data){
-    console.log(data.forecast);
-    $.each(data.forecast.forecastday, function(idx, days){
+    $.get(`https://api.weatherapi.com/v1/forecast.json?key=2d6c3cdfeee14008b4e153345211509&q=${cityZip}&days=8&aqi=no&alerts=no
+    `, function (data) {
+        console.log(data.forecast);
+        $.each(data.forecast.forecastday, function (idx, days) {
 
-        // $("#content #WeatherContainer").html(`<p>${days.astro.sunrise}</p>`);
-        $("#content #WeatherContainer").append(`
+            // $("#content #WeatherContainer").html(`<p>${days.astro.sunrise}</p>`);
+            $("#content #WeatherContainer").append(`
         <div class="day">
         <h1></h1>
         <h2>Weather Forecast for: ${days.date}</h2>
@@ -41,22 +41,22 @@ function getWeather(cityZip){
         
         `)
 
-        return(idx !== 6);
-    })
+            return (idx !== 6);
+        })
 
-    
-    }).fail(function(e){
+
+    }).fail(function (e) {
         console.log(e);
     });
 }
-function addEventListener(){
-    $("#submit").click(function (e){
+function addEventListener() {
+    $("#submit").click(function (e) {
         e.preventDefault();
-        let cityZipName= $("#cityZip").val();
+        let cityZipName = $("#cityZip").val();
         console.log(cityZipName)
         getWeather(cityZipName);
     })
-   
+
 }
 
 
